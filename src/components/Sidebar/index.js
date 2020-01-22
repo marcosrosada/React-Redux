@@ -2,6 +2,14 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
+function toggleLesson(module, lesson) {
+  return {
+    type: 'TOGGLE_LESSON',
+    module,
+    lesson
+  }
+}
+
 const Sidebar = ({ modules }) => (
   <aside>
     {modules.map(module => (
@@ -17,4 +25,4 @@ const Sidebar = ({ modules }) => (
   </aside>
 );
 
-export default connect(state => ({ modules: state }))(Sidebar);
+export default connect(state => ({ modules: state.modules }))(Sidebar);
