@@ -24,7 +24,9 @@ const INITIAL_STATE = {
 };
 
 function reducer(state = INITIAL_STATE, action) {
-  console.log(action);
+  if (action.type === 'TOGGLE_LESSON') {
+    return { ...INITIAL_STATE, activeModule: action.module, activeLesson: action.lesson }
+  }
 
   return state;
 }
