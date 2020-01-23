@@ -8,13 +8,13 @@ import './index.css';
 
 function App() {
   return (
-    <div className="App" class="container">
+    <div className="App container">
       <Provider store={store}>
-        <div class="flex-grid">
-          <aside class="col sidebar">
+        <div className="flex-grid">
+          <aside className="col sidebar">
             <Sidebar />
           </aside>
-          <section class="col main">
+          <section className="col main">
             Teste
           </section>
         </div>
