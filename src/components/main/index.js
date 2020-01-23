@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 const Main = ({ activeModule, activeLesson }) => (
   <div>
@@ -11,5 +11,5 @@ const Main = ({ activeModule, activeLesson }) => (
 
 export default connect(state => ({
   activeModule: state.course.activeModule,
-  activeLesson: state.course.activeLesson,
+  activeLesson: state.course.activeLesson
 }))(Main);

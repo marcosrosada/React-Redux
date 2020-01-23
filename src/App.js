@@ -1,11 +1,11 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React from "react";
+import { Provider } from "react-redux";
 
 import Sidebar from "./components/Sidebar";
 import Main from "./components/Main";
 import store from "./store";
 
-import './index.css';
+import "./index.css";
 
 function App() {
   return (

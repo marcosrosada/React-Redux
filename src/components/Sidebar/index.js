@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import * as CoursesActions from '../../store/actions/course';
+import * as CoursesActions from "../../store/actions/course";
 
 const Sidebar = ({ modules, toggleLesson }) => (
   <aside>
@@ -14,7 +14,9 @@ const Sidebar = ({ modules, toggleLesson }) => (
           {module.lessons.map(lesson => (
             <li key={lesson.id}>
               {lesson.title}
-              <button onClick={() => toggleLesson(module, lesson)}>Selecionar</button>
+              <button onClick={() => toggleLesson(module, lesson)}>
+                Selecionar
+              </button>
             </li>
           ))}
         </ul>
@@ -26,9 +28,10 @@ const Sidebar = ({ modules, toggleLesson }) => (
 const mapStateToProps = state => ({
   modules: state.course.modules
 });
-const mapDispatchToProps = dispatch => bindActionCreators(CoursesActions, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CoursesActions, dispatch);
 // ({
-//   toggleLesson: (module, lesson) => 
+//   toggleLesson: (module, lesson) =>
 //     dispatch(CoursesActions.toggleLesson(module, lesson))
 // });
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

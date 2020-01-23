@@ -22,8 +22,12 @@ const INITIAL_STATE = {
 };
 
 export default function course(state = INITIAL_STATE, action) {
-  if (action.type === 'TOGGLE_LESSON') {
-    return { ...INITIAL_STATE, activeModule: action.module, activeLesson: action.lesson }
+  if (action.type === "TOGGLE_LESSON") {
+    return {
+      ...INITIAL_STATE,
+      activeModule: action.module,
+      activeLesson: action.lesson
+    };
   }
 
   return state;
