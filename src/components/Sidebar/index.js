@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import { Creators as CoursesActions } from "../../store/ducks/todos";
+import { Creators as CoursesActions } from "../../store/ducks/course";
 
 const Sidebar = ({ modules, toggleLesson }) => (
   <aside>

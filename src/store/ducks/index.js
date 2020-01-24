@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import course from "./todos";
+import course from "./course";
 
 export default combineReducers({
   course
