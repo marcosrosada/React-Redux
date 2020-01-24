@@ -34,4 +34,5 @@ const mapDispatchToProps = dispatch =>
 //   toggleLesson: (module, lesson) =>
 //     dispatch(CoursesActions.toggleLesson(module, lesson))
 // });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
