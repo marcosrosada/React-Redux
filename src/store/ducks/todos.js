@@ -1,3 +1,7 @@
+export const Types = {
+  TOGGLE_LESSON: "TOGGLE_LESSON"
+};
+
 const INITIAL_STATE = {
   activeModule: {},
   activeLesson: {},
@@ -22,7 +26,7 @@ const INITIAL_STATE = {
 };
 
 export default function course(state = INITIAL_STATE, action) {
-  if (action.type === "TOGGLE_LESSON") {
+  if (action.type === Types.TOGGLE_LESSON) {
     return {
       ...INITIAL_STATE,
       activeModule: action.module,
@@ -32,3 +36,11 @@ export default function course(state = INITIAL_STATE, action) {
 
   return state;
 }
+
+export const Creators = {
+  toggleLesson: (module, lesson) => ({
+    type: Types.TOGGLE_LESSON,
+    module,
+    lesson
+  })
+};
