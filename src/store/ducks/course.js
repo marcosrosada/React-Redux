@@ -1,6 +1,8 @@
-export const Types = {
-  TOGGLE_LESSON: "TOGGLE_LESSON"
-};
+import { createActions, createReducer } from "reduxsauce";
+
+export const { Types, Creators } = createActions({
+  toggleLesson: ["module", "lesson"]
+});
 
 const INITIAL_STATE = {
   activeModule: {},
@@ -25,22 +27,12 @@ const INITIAL_STATE = {
   ]
 };
 
-export default function course(state = INITIAL_STATE, action) {
-  if (action.type === Types.TOGGLE_LESSON) {
-    return {
-      ...INITIAL_STATE,
-      activeModule: action.module,
-      activeLesson: action.lesson
-    };
-  }
+const toggle = (state = INITIAL_STATE, action) => ({
+  ...INITIAL_STATE,
+  activeModule: action.module,
+  activeLesson: action.lesson
+});
 
-  return state;
-}
-
-export const Creators = {
-  toggleLesson: (module, lesson) => ({
-    type: Types.TOGGLE_LESSON,
-    module,
-    lesson
-  })
-};
+export default createReducer(INITIAL_STATE, {
+  [Types.TOGGLE_LESSON]: toggle
+});
